@@ -1,5 +1,7 @@
 print("== 명언 앱 ==")
 
+last_id = 0
+
 while True:
     print("명언) ", end="")
     cmd = input()
@@ -12,5 +14,6 @@ while True:
         content = input()
         print("작가 : ", end="")
         author = input()
-        id = 1
+        last_id += 1
+        id = last_id
         print(f"{id}번 명언이 등록되었습니다.")
