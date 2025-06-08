@@ -12,3 +12,5 @@ while True:
         content = input()
         print("작가 : ", end="")
         author = input()
+        id = 1
+        print(f"{id}번 명언이 등록되었습니다.")
