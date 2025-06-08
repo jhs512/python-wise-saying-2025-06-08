@@ -1,3 +1,12 @@
+class WiseSaying:
+    def __init__(self, id, content, author):
+        self.id = id
+        self.content = content
+        self.author = author
+
+    def __str__(self):
+        return f"WiseSaying(id={self.id}, content='{self.content}', author='{self.author}')"
+
 print("== 명언 앱 ==")
 
 last_id = 0
@@ -18,11 +27,9 @@ while True:
         last_id += 1
         id = last_id
 
-        wise_saying = {
-            "id": id,
-            "content": content,
-            "author": author
-        }
+        wise_saying = WiseSaying(id, content, author)
+
+        print(f"디버그 : 생성된 명언 {wise_saying}")
 
         wise_sayings.append(wise_saying)
 
@@ -32,4 +39,4 @@ while True:
         print("----------------------")
 
         for wise_saying in wise_sayings:
-            print(f"{wise_saying['id']} / {wise_saying['author']} / {wise_saying['content']}")
+            print(f"{wise_saying.id} / {wise_saying.author} / {wise_saying.content}")
