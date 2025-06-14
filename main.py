@@ -29,8 +29,6 @@ while True:
 
         wise_saying = WiseSaying(id, content, author)
 
-        print(f"디버그 : 생성된 명언 {wise_saying}")
-
         wise_sayings.append(wise_saying)
 
         print(f"{id}번 명언이 등록되었습니다.")
@@ -40,3 +38,16 @@ while True:
 
         for wise_saying in wise_sayings:
             print(f"{wise_saying.id} / {wise_saying.author} / {wise_saying.content}")
+    elif cmd == "삭제?id=1":
+        id = 1
+
+        found_wise_saying = None
+
+        for wise_saying in wise_sayings:
+            if wise_saying.id == id:
+                found_wise_saying = wise_saying
+                break
+
+        wise_sayings.remove(found_wise_saying)
+
+        print("1번 명언이 삭제되었습니다.")
