@@ -1,3 +1,6 @@
+last_id = 0
+wise_sayings = []
+
 class WiseSaying:
     def __init__(self, id, content, author):
         self.id = id
@@ -7,10 +10,13 @@ class WiseSaying:
     def __str__(self):
         return f"WiseSaying(id={self.id}, content='{self.content}', author='{self.author}')"
 
-print("== 명언 앱 ==")
+def find_by_id(id):
+    for wise_saying in wise_sayings:
+        if wise_saying.id == id:
+            return wise_saying
+    return None
 
-last_id = 0
-wise_sayings = []
+print("== 명언 앱 ==")
 
 while True:
     print("명언) ", end="")
@@ -41,12 +47,7 @@ while True:
     elif cmd == "삭제?id=1":
         id = 1
 
-        found_wise_saying = None
-
-        for wise_saying in wise_sayings:
-            if wise_saying.id == id:
-                found_wise_saying = wise_saying
-                break
+        found_wise_saying = find_by_id(id)
 
         wise_sayings.remove(found_wise_saying)
 
