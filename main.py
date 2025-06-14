@@ -44,11 +44,11 @@ while True:
 
         for wise_saying in wise_sayings:
             print(f"{wise_saying.id} / {wise_saying.author} / {wise_saying.content}")
-    elif cmd == "삭제?id=1":
-        id = 1
+    elif cmd.startswith("삭제?id="):
+        id = int(cmd.split("?id=")[1])
 
         found_wise_saying = find_by_id(id)
 
         wise_sayings.remove(found_wise_saying)
 
-        print("1번 명언이 삭제되었습니다.")
+        print(f"{id}번 명언이 삭제되었습니다.")
