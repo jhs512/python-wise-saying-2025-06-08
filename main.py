@@ -56,3 +56,24 @@ while True:
         wise_sayings.remove(found_wise_saying)
 
         print(f"{id}번 명언이 삭제되었습니다.")
+    elif cmd.startswith("수정?id="):
+        id = int(cmd.split("?id=")[1])
+
+        found_wise_saying = find_by_id(id)
+
+        if found_wise_saying is None:
+            print(f"{id}번 명언은 존재하지 않습니다.")
+            continue
+
+        print(f"명언(기존) : {found_wise_saying.content}")
+        print("명언 : ", end="")
+        content = input()
+
+        print(f"작가(기존) : {found_wise_saying.author}")
+        print("작가 : ", end="")
+        author = input()
+
+        found_wise_saying.content = content
+        found_wise_saying.author = author
+
+        print(f"{id}번 명언이 수정되었습니다.")
