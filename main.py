@@ -49,6 +49,10 @@ while True:
 
         found_wise_saying = find_by_id(id)
 
+        if found_wise_saying is None:
+            print(f"{id}번 명언은 존재하지 않습니다.")
+            continue
+
         wise_sayings.remove(found_wise_saying)
 
         print(f"{id}번 명언이 삭제되었습니다.")
